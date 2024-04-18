@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    background-color: var(--primary);
+    margin: 0;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .navbar-li {
+    flex-grow: 1;
+    list-style-type: none;
+    text-align: center;
+    color: var(--offWhite);
+  }
+
+  .navbar-link {
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .navbar-logout {
+    margin-left: auto;
+  }
+
+  .navbar-link:hover {
+    color: var(--dark);
+  }
