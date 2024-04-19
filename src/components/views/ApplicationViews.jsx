@@ -31,7 +31,10 @@ export const ApplicationViews = () => {
                 <Route path="home" element={<Home />} />
                 <Route path="addrun" element={<AddRun currentUser={currentUser}/>} />
                 <Route path="myruns" element={<MyRuns currentUser={currentUser}/>} />
-                <Route path="likes" element={<Likes />} />
+                <Route path="editrun">
+                    <Route path=":editRunId" element={<>Hi</>} />
+                </Route>
+                <Route path="likes" element={<Likes currentUser={currentUser}/>} />
                 <Route path="myprofile" element={<MyProfile currentUser={currentUser}/>} />
             </Route>    
         </Routes>
