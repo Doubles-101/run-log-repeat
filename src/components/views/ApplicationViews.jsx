@@ -30,9 +30,9 @@ export const ApplicationViews = () => {
                 <Route index element={<Welcome />} />
                 <Route path="home" element={<Home />} />
                 <Route path="addrun" element={<AddRun currentUser={currentUser}/>} />
-                <Route path="myruns" element={<MyRuns />} />
+                <Route path="myruns" element={<MyRuns currentUser={currentUser}/>} />
                 <Route path="likes" element={<Likes />} />
-                <Route path="myprofile" element={<MyProfile />} />
+                <Route path="myprofile" element={<MyProfile currentUser={currentUser}/>} />
             </Route>    
         </Routes>
     )

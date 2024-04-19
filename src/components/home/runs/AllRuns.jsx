@@ -12,7 +12,7 @@ export const AllRuns = () => {
         })
     }, [])
     return (
-        <div className="allruns-container">
+        <div className="allruns-container" key={runs.id}>
             <h2>All Runs</h2>
             {runs.map((runObject) => {
                 return (

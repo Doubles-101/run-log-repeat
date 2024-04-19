@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react"
 import "./AddRun.css"
-import { getRunTypes } from "../../services/getAddRun.jsx"
+import { getPostCreatedRun, getRunTypes } from "../../services/getAddRun.jsx"
 
 export const AddRun = ({currentUser}) => {
     const [currentAddRun, setCurrentAddRun] = useState({})
     const [runTypes, setRunTypes] = useState([])
-    const [userTopicChoice, setUserTopicChoice] = useState('')
+    const [userTopicChoice, setUserTopicChoice] = useState(0)
+
+    useEffect(() => {
+        setCurrentAddRun({userId: currentUser.id, runTypeId: userTopicChoice})
+    }, [currentUser, userTopicChoice])
 
     useEffect(() => {
         getRunTypes().then((runTypeArray) => {
@@ -15,13 +19,15 @@ export const AddRun = ({currentUser}) => {
 
 
     const handleTopicChoice = (event) => {
-        console.log(`${event}`)
         setUserTopicChoice(event)
     }
 
+    /* Needs to validate all required fields are filled in */
+    /* Needs to Navigate viewer to home */
     const handleSaveClick = (event) => {
         event.preventDefault()
-        console.log("Save Button Clicked")
+        getPostCreatedRun(currentAddRun)
+        console.log("Posted")
     }
 
     return (
@@ -36,7 +42,7 @@ export const AddRun = ({currentUser}) => {
                     })}
                 </select>
             </fieldset>
-            <fieldset>
+            <fieldset required>
                 <input 
                     type="text"
                     required
@@ -80,7 +86,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
-                    type="number"
+                    type="text"
                     required
                     placeholder="Insert Date"
                     value={currentAddRun.date}
