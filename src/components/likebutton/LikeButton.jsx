@@ -73,9 +73,9 @@ export const LikeButton = ({runObject, setLikeCounter, likeCounter}) => {
         )
     }
 
-    const handleEdit = () => {
+    const handleDetails = () => {
         console.log("edited")
-        navigate(`/editrun/${editRunId}`)
+        navigate(`/rundetails/${runObject.id}`)
     }
 
     return (
@@ -89,9 +89,8 @@ export const LikeButton = ({runObject, setLikeCounter, likeCounter}) => {
         {liked && 
         <button onClick={handleUnlike}>Unlike</button>}
             
-        {/* If the user is the creator of the Run display this */}
-        {currentUser?.id === runObject.userId && 
-        <button onClick={handleEdit}>Edit</button>}
+       
+        <button onClick={handleDetails}>Details</button>
         
         </>
     )

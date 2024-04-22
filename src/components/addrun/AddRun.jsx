@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
 import "./AddRun.css"
 import { getPostCreatedRun, getRunTypes } from "../../services/getAddRun.jsx"
+import { useNavigate } from "react-router-dom"
 
 export const AddRun = ({currentUser}) => {
     const [currentAddRun, setCurrentAddRun] = useState({})
     const [runTypes, setRunTypes] = useState([])
     const [userTopicChoice, setUserTopicChoice] = useState(0)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         setCurrentAddRun({userId: currentUser.id, runTypeId: userTopicChoice})
@@ -28,6 +31,7 @@ export const AddRun = ({currentUser}) => {
         event.preventDefault()
         getPostCreatedRun(currentAddRun)
         console.log("Posted")
+        navigate("/myruns")
     }
 
     return (

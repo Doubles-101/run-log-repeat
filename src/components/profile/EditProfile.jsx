@@ -8,6 +8,7 @@ export const EditProfile = ({currentUser}) => {
     const navigate = useNavigate()
 
     useEffect(() => {
+        /* if statement to prevent initial render error */
         if(currentUser.id > 0) {
             getEditProfile(currentUser.id).then((userObj) => {
                 setUserInfo(userObj)
@@ -18,7 +19,7 @@ export const EditProfile = ({currentUser}) => {
     const handleSave = () => {
         console.log("Saved!")
         getPutProfile(userInfo)
-        navigate(`/`)
+        navigate(`/profile/${currentUser.id}`)
     }
 
     return (

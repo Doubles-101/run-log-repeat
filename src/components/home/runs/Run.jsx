@@ -27,9 +27,8 @@ export const Run = ({runObject}) => {
     return (
         <div className="run-post">
             <header>
-                <Link to={`rundetails/${runObject.id}`}>
-                    <h2>{runObject.date}</h2>
-                </Link>
+                <h2>{runObject.date}</h2>
+                <h2>{runDetails[0]?.user?.username}</h2>
             </header>
             <div>
                 <h3>Distance : {runObject.distance}</h3>
