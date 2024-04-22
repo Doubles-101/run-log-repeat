@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react"
 import "./LikeButton.css"
-import { getLikeButton } from "../../services/getLikeButton.jsx"
+import { getDeleteLike, getLikeButton, getPostLike } from "../../services/getLikeButton.jsx"
 import { useNavigate, useParams } from "react-router-dom"
 
 export const LikeButton = ({runObject}) => {
     const [currentUser, setCurrentUser] = useState({}) 
     const [userLikes, setUserLikes] = useState([])
     const [liked, setLiked] = useState(false)
+    const [currentLike, setCurrentLike]= useState([])
 
     const navigate = useNavigate()
     const { editRunId } = useParams()
@@ -18,7 +19,7 @@ export const LikeButton = ({runObject}) => {
         setCurrentUser(honeyUserObj)
     }, [])
 
-    /* This searches through all the runs the user has liked 
+    /* This Searches through all the runs the user has liked 
     sees if the current run has been like
     If liked, return True
     If not liked, return False
@@ -28,6 +29,7 @@ export const LikeButton = ({runObject}) => {
     }, [userLikes])
     
 
+    /* This Grabs all the runs the user has liked and stores it in state */
     useEffect(() => {
         if(currentUser.id > 0) {
             getLikeButton(currentUser.id, runObject.id).then((likeArray) => {
@@ -36,13 +38,27 @@ export const LikeButton = ({runObject}) => {
         }
     }, [currentUser, runObject])
 
+    useEffect(() => {
+        setCurrentLike(
+            userLikes.find((like) =>
+                currentUser.id === like.userId
+            )
+        )
+    }, [userLikes, liked])
+
 
     const handleLike = () => {
         console.log("liked")
+        getPostLike(currentUser.id, runObject.id).then(
+            setLiked(!liked)
+        )
     }
 
     const handleUnlike = () => {
         console.log("Unliked")
+        getDeleteLike(currentLike.id).then(
+            setLiked(!liked)
+        )
     }
 
     const handleEdit = () => {

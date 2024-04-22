@@ -1,0 +1,12 @@
+.run-post {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 22%;
+    height: 300px;
+    margin: 1em;
+    justify-content: space-between;
+    background-color: var(--offWhite);
+    border: solid 1px var(--primary);
+    border-radius: 10px;
+    padding: .5em;
+}

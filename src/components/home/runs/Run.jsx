@@ -1,8 +1,25 @@
 import { Link } from "react-router-dom"
 import { LikeButton } from "../../likebutton/LikeButton.jsx"
+import "./Run.css"
+import { useState, useEffect } from "react"
+import { getRunDetails } from "../../../services/getHomeRunsRun.jsx"
 
 
 export const Run = ({runObject}) => {
+    const [runDetails, setRunDetails] = useState([])
+
+    useEffect(() => {
+        getRunDetails(runObject.id).then((runArray) => {
+            setRunDetails(runArray)
+        })
+    }, [runObject])
+
+    /* May need to put this number in a state, so the page auto-update the number of likes */
+    let totalLikes = 0
+    for (const run of runDetails) {
+        totalLikes += run.likes.length
+    }
+
     return (
         <div className="run-post">
             <header>
@@ -17,6 +34,7 @@ export const Run = ({runObject}) => {
             </div>
             <footer>
                 <LikeButton runObject={runObject} />
+                <h3>Number of Likes: {totalLikes}</h3>
             </footer>
         </div>
     )

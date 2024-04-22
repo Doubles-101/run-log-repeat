@@ -1,3 +1,9 @@
+.allruns-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
 .run-post {
     background-color: aliceblue;
     border: solid 1px black;

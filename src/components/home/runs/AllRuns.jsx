@@ -12,7 +12,6 @@ export const AllRuns = () => {
     }, [])
     return (
         <div className="allruns-container" key={runs.id}>
-            <h2>All Runs</h2>
             {runs.map((runObject) => {
                 return (
                     <Run className="run-post" runObject={runObject} key={runObject.id}/>

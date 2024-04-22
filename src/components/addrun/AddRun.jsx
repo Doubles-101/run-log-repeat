@@ -86,7 +86,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
-                    type="text"
+                    type="date"
                     required
                     placeholder="Insert Date"
                     value={currentAddRun.date}

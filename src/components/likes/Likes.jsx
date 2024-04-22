@@ -13,7 +13,7 @@ export const Likes = ({currentUser}) => {
     }, [currentUser])
 
     return (
-        <div className="likes-contianer">
+        <div className="likes-container">
             {likeList.map((likedRun) => {
                 return (
                     <Run runObject={likedRun.run} key={likedRun.id}/>
