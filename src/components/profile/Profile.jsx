@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react"
-import "./MyProfile.css"
-import { getMyProfile } from "../../services/getMyProfile.jsx"
+import "./Profile.css"
+import { getMyProfile } from "../../services/getProfile.jsx"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
-export const MyProfile = ({currentUser}) => {
+export const Profile = ({currentUser}) => {
     const [userProfile, setUserProfile] = useState({})
 
+    const { profileId } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
-        /* if statement to remove an error of intitial render */
-        if (currentUser.id > 0) {
+        if (currentUser.id === profileId) {
             getMyProfile(currentUser.id).then((userArray) => {
                setUserProfile(userArray)
             })
+        } else {
+            getMyProfile(profileId).then((userArray) => {
+                setUserProfile(userArray)
+             })
         }
     }, [currentUser])
 
     const handleEdit = () => {
-        console.log("Edit")
+        console.log("Edit") 
     }
 
     return (
@@ -28,7 +34,10 @@ export const MyProfile = ({currentUser}) => {
                 {userProfile.runs?.length}
             </div>
             {userProfile.id === currentUser.id &&
-            <button onClick={handleEdit}>Edit</button>}
+            <Link to={`/editprofile`}>
+                <button onClick={handleEdit}>Edit</button>
+            </Link>
+            }
         </div>
     )
 }

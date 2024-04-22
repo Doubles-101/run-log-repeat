@@ -1,7 +1,7 @@
 import "./NavBar.css"
 import { Link } from "react-router-dom"
 
-export const NavBar = () => {
+export const NavBar = ({currentUser}) => {
 
     return(
         <div className="navbar">
@@ -27,7 +27,7 @@ export const NavBar = () => {
                     </Link>
                 </li>
                 <li className="navbar-li">
-                    <Link className="navbar-link" to="/myprofile">
+                    <Link className="navbar-link" to={`/profile/${currentUser.id}`}>
                         My Profile
                     </Link>
                 </li>

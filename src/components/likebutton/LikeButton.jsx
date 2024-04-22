@@ -3,11 +3,11 @@ import "./LikeButton.css"
 import { getDeleteLike, getLikeButton, getPostLike } from "../../services/getLikeButton.jsx"
 import { useNavigate, useParams } from "react-router-dom"
 
-export const LikeButton = ({runObject}) => {
+export const LikeButton = ({runObject, setLikeCounter, likeCounter}) => {
     const [currentUser, setCurrentUser] = useState({}) 
     const [userLikes, setUserLikes] = useState([])
     const [liked, setLiked] = useState(false)
-    const [currentLike, setCurrentLike]= useState([])
+    const [currentLike, setCurrentLike] = useState([])
 
     const navigate = useNavigate()
     const { editRunId } = useParams()
@@ -36,7 +36,7 @@ export const LikeButton = ({runObject}) => {
                 setUserLikes(likeArray)
             })
         }
-    }, [currentUser, runObject])
+    }, [currentUser, runObject, liked])
 
     useEffect(() => {
         setCurrentLike(
@@ -44,20 +44,32 @@ export const LikeButton = ({runObject}) => {
                 currentUser.id === like.userId
             )
         )
-    }, [userLikes, liked])
+    }, [userLikes, liked, runObject, likeCounter])
 
 
     const handleLike = () => {
         console.log("liked")
         getPostLike(currentUser.id, runObject.id).then(
             setLiked(!liked)
-        )
+            ,setLikeCounter(likeCounter + 1)
+        ).then(
+            setCurrentLike(
+            userLikes.find((like) =>
+                currentUser.id === like.userId
+            )
+        ))
     }
 
     const handleUnlike = () => {
         console.log("Unliked")
-        getDeleteLike(currentLike.id).then(
+        getDeleteLike(currentLike?.id).then(
             setLiked(!liked)
+            ,setLikeCounter(likeCounter - 1)
+            ,setCurrentLike(
+                userLikes.find((like) =>
+                    currentUser.id === like.userId
+                )
+            )
         )
     }
 
@@ -68,9 +80,6 @@ export const LikeButton = ({runObject}) => {
 
     return (
         <>
-        {/* If the user is the creator of the Run display this */}
-        {currentUser?.id === runObject.userId && 
-        <button onClick={handleEdit}>Edit</button>}
 
         {/* If the post has not been Liked display this */}
         {!liked && 
@@ -80,6 +89,10 @@ export const LikeButton = ({runObject}) => {
         {liked && 
         <button onClick={handleUnlike}>Unlike</button>}
             
+        {/* If the user is the creator of the Run display this */}
+        {currentUser?.id === runObject.userId && 
+        <button onClick={handleEdit}>Edit</button>}
+        
         </>
     )
 }

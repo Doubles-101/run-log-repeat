@@ -7,6 +7,7 @@ import { getRunDetails } from "../../../services/getHomeRunsRun.jsx"
 
 export const Run = ({runObject}) => {
     const [runDetails, setRunDetails] = useState([])
+    const [likeCounter, setLikeCounter] = useState(0)
 
     useEffect(() => {
         getRunDetails(runObject.id).then((runArray) => {
@@ -14,11 +15,14 @@ export const Run = ({runObject}) => {
         })
     }, [runObject])
 
-    /* May need to put this number in a state, so the page auto-update the number of likes */
-    let totalLikes = 0
-    for (const run of runDetails) {
-        totalLikes += run.likes.length
-    }
+    
+    useEffect(() => {
+        let totalLikes = 0
+        for (const run of runDetails) {
+            totalLikes += run.likes.length
+        }
+        setLikeCounter(totalLikes)
+    }, [runDetails])
 
     return (
         <div className="run-post">
@@ -33,8 +37,8 @@ export const Run = ({runObject}) => {
                 <h3>Location : {runObject.location}</h3>
             </div>
             <footer>
-                <LikeButton runObject={runObject} />
-                <h3>Number of Likes: {totalLikes}</h3>
+                <LikeButton runObject={runObject} setLikeCounter={setLikeCounter} likeCounter={likeCounter}/>
+                <h3>Number of Likes: {likeCounter}</h3>
             </footer>
         </div>
     )
