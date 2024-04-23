@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import "./RunDetails.css"
 import { useEffect, useState } from "react"
 import { getCurrentRunDetails, getDeleteRun } from "../../services/getRunDetails.jsx"
@@ -17,6 +17,7 @@ export const RunDetails = ({currentUser}) => {
 
     const handleEdit = () => {
         console.log("Edit!")
+        navigate(`/editrun/${currentRun.id}`)
     }
 
     const handleDelete = () => {

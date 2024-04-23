@@ -9,6 +9,7 @@ import { Profile } from "../profile/Profile.jsx"
 import { useEffect, useState } from "react"
 import { EditProfile } from "../profile/EditProfile.jsx"
 import { RunDetails } from "../rundetails/RunDetails.jsx"
+import { EditRun } from "../rundetails/EditRun.jsx"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({}) 
@@ -35,6 +36,9 @@ export const ApplicationViews = () => {
                 <Route path="myruns" element={<MyRuns currentUser={currentUser}/>} />
                 <Route path="rundetails">
                     <Route path=":runDetailsId" element={<RunDetails currentUser={currentUser}/>} />
+                </Route>
+                <Route path="editrun">
+                    <Route path=":editRunId" element={<EditRun currentUser={currentUser} />} />
                 </Route>
                 <Route path="likes" element={<Likes currentUser={currentUser}/>} />
                 <Route path="profile">

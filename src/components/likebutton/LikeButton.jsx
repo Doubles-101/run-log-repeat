@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import "./LikeButton.css"
 import { getDeleteLike, getLikeButton, getPostLike } from "../../services/getLikeButton.jsx"
 import { useNavigate, useParams } from "react-router-dom"
+import { getLikes } from "../../services/getLikes.jsx"
 
-export const LikeButton = ({runObject, setLikeCounter, likeCounter}) => {
+export const LikeButton = ({runObject, setLikeCounter, likeCounter, setLikeList}) => {
     const [currentUser, setCurrentUser] = useState({}) 
     const [userLikes, setUserLikes] = useState([])
     const [liked, setLiked] = useState(false)
@@ -70,6 +71,10 @@ export const LikeButton = ({runObject, setLikeCounter, likeCounter}) => {
                     currentUser.id === like.userId
                 )
             )
+        ).then(
+            getLikes(currentUser.id).then((likeArray) => {
+                setLikeList(likeArray)
+            })
         )
     }
 

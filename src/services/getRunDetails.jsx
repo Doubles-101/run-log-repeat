@@ -7,3 +7,17 @@ export const getDeleteRun = (runId) => {
         method: "DELETE"
     })
 }
+
+export const getCurrentEditRunDetails = (runId) => {
+    return fetch(`http://localhost:8088/runs/${runId}`).then(res => res.json())
+}
+
+export const getPutEditedRun = (runObj) => {
+    return fetch(`http://localhost:8088/runs/${runObj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(runObj)
+    })
+}
