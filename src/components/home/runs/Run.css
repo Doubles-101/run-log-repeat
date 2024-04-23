@@ -1,7 +1,7 @@
 .run-post {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 22%;
+    flex-basis: 20%;
     height: 500px;
     margin: 1em;
     justify-content: space-between;
