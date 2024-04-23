@@ -1,3 +1,4 @@
+/* This is the MVP */
 import { NavBar } from "../navbar/NavBar.jsx"
 import { Routes, Route, Outlet } from "react-router-dom"
 import { Welcome } from "../welcome/Welcome.jsx"
