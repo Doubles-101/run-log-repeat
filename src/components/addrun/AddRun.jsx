@@ -35,9 +35,12 @@ export const AddRun = ({currentUser}) => {
     }
 
     return (
-        <form>
+    <div className="w-100 mx-auto p-4">
+        <form className="w-1/2 mx-auto p-4">
             <fieldset>
-                <select id="topic" onChange={(event) => {handleTopicChoice(parseInt(event.target.value))}}>
+                <select 
+                className="rounded-lg p-2 m-2"
+                id="topic" onChange={(event) => {handleTopicChoice(parseInt(event.target.value))}}>
                     <option value={0}>Please Select Run Type</option>
                     {runTypes.map((runOption) => {
                         return (
@@ -48,6 +51,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset required>
                 <input 
+                    className="rounded-lg p-2 m-2"
                     type="text"
                     required
                     placeholder="Insert Location"
@@ -62,6 +66,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
+                    className="rounded-lg p-2 m-2"
                     type="number"
                     required
                     placeholder="Insert Distance"
@@ -76,6 +81,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
+                    className="rounded-lg p-2 m-2"
                     type="number"
                     required
                     placeholder="Insert Time"
@@ -90,6 +96,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
+                    className="rounded-lg p-2 m-2"
                     type="date"
                     required
                     placeholder="Insert Date"
@@ -104,6 +111,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
+                    className="rounded-lg p-2 m-2"
                     type="number"
                     required
                     placeholder="Insert Temperature"
@@ -118,6 +126,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
+                    className="rounded-lg p-2 m-2"
                     type="checkbox"
                     placeholder="Insert Distance"
                     value={currentAddRun.public}
@@ -130,7 +139,11 @@ export const AddRun = ({currentUser}) => {
                 Make Public
             </fieldset>
             
-            <button onClick={handleSaveClick}>Save</button>
+            <button 
+            className="bg-blue-500 text-white px-4 py-2 m-2 transition-all 
+            duration-300 hover:bg-blue-600 hover:shadow-lg"
+            onClick={handleSaveClick}>Save</button>
         </form>
+    </div>
     )
 }
