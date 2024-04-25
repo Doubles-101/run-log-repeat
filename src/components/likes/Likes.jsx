@@ -14,6 +14,9 @@ export const Likes = ({currentUser}) => {
 
     return (
         <div className="likes-container">
+            <div className="color p-8">
+                <h1 className="text-6xl font-bold font-sans text-center">Liked Runs </h1>
+            </div>
             {likeList.map((likedRun) => {
                 return (
                     <Run runObject={likedRun.run} key={likedRun.id} setLikeList={setLikeList} />

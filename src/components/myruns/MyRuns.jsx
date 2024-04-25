@@ -14,7 +14,9 @@ export const MyRuns = ({currentUser}) => {
 
     return (
         <div className="myruns-container">
-            <h2>My Runs</h2>
+            <div className="color p-8">
+                <h1 className="text-6xl font-bold font-sans text-center">My Runs</h1>
+            </div>
             {myRunsList.map((runObject) => {
                 return (
                     /* Run module is located in home/runs/Run.jsx */
