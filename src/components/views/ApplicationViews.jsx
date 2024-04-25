@@ -10,6 +10,7 @@ import { useEffect, useState } from "react"
 import { EditProfile } from "../profile/EditProfile.jsx"
 import { RunDetails } from "../rundetails/RunDetails.jsx"
 import { EditRun } from "../rundetails/EditRun.jsx"
+import { Footer } from "../footer/Footer.jsx"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({}) 
@@ -28,6 +29,7 @@ export const ApplicationViews = () => {
                 <>
                     <NavBar currentUser={currentUser}/>
                     <Outlet />
+                    <Footer />
                 </>
             }>
                 <Route index element={<Welcome />} />
