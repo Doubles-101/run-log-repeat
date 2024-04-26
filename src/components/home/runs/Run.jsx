@@ -31,7 +31,7 @@ export const Run = ({runObject, setLikeList}) => {
         <header>
             <h2 className="text-xl font-bold m-2">{runObject.date}</h2>
             <Link className="run-post-profileLink" to={`/profile/${runDetails[0]?.user?.id}`}>
-                <h2 className="text-lg font-semibold mb-2">{runDetails[0]?.user?.username}</h2>
+                <h2 className="text-lg font-semibold mb-2 hover:text-blue-200">{runDetails[0]?.user?.username}</h2>
             </Link>
         </header>
         <div>
@@ -41,7 +41,7 @@ export const Run = ({runObject, setLikeList}) => {
         </div>
         <footer className="flex items-center justify-between">
             <LikeButton runObject={runObject} setLikeCounter={setLikeCounter} likeCounter={likeCounter} setLikeList={setLikeList} />
-            <h3 className="text-lg">Number of Likes: {likeCounter}</h3>
+            <h3 className="text-lg m-4">Number of Likes: {likeCounter}</h3>
         </footer>
     </div>
 )

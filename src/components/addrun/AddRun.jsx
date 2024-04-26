@@ -39,7 +39,7 @@ export const AddRun = ({currentUser}) => {
         <form className="w-1/2 mx-auto p-4">
             <fieldset>
                 <select 
-                className="rounded-lg p-2 m-2"
+                className="rounded-lg p-2 m-2 placeholder:italic"
                 id="topic" onChange={(event) => {handleTopicChoice(parseInt(event.target.value))}}>
                     <option value={0}>Please Select Run Type</option>
                     {runTypes.map((runOption) => {
@@ -51,7 +51,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset required>
                 <input 
-                    className="rounded-lg p-2 m-2"
+                    className="rounded-lg p-2 m-2 placeholder:italic"
                     type="text"
                     required
                     placeholder="Insert Location"
@@ -66,7 +66,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
-                    className="rounded-lg p-2 m-2"
+                    className="rounded-lg p-2 m-2 placeholder:italic"
                     type="number"
                     required
                     placeholder="Insert Distance"
@@ -81,7 +81,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
-                    className="rounded-lg p-2 m-2"
+                    className="rounded-lg p-2 m-2 placeholder:italic"
                     type="number"
                     required
                     placeholder="Insert Time"
@@ -96,7 +96,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
-                    className="rounded-lg p-2 m-2"
+                    className="rounded-lg p-2 m-2 placeholder:italic"
                     type="date"
                     required
                     placeholder="Insert Date"
@@ -111,7 +111,7 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             <fieldset>
             <input 
-                    className="rounded-lg p-2 m-2"
+                    className="rounded-lg p-2 m-2 placeholder:italic"
                     type="number"
                     required
                     placeholder="Insert Temperature"

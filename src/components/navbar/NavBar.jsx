@@ -16,7 +16,7 @@ export const NavBar = ({currentUser}) => {
             <h2 className="mr-8 text-center">RUN, LOG, REPEAT</h2>
             {isDropdownOpen &&
                 <ul className="navbar">
-                    <div className="text-left text-blue-600 mr-64 hover:underline" onClick={toggleDropdown}>RUNS
+                    <div className="text-left text-blue-600 mr-64 hover:underline cursor-pointer" onClick={toggleDropdown}>RUNS
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
@@ -44,7 +44,7 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-left mr-64 text-blue-600 hover:underline" onClick={toggleDropdown}>TRAINING PLANS
+                    <div className="text-left mr-64 text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>TRAINING PLANS
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
@@ -62,7 +62,7 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-right ml-64  text-blue-600 hover:underline" onClick={toggleDropdown}>PROFILE
+                    <div className="text-right ml-64  text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>

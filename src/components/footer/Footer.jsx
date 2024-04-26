@@ -2,7 +2,7 @@ import "./Footer.css"
 
 export const Footer = () => {
     return (
-        <footer className="bg-color text-white py-8">
+        <footer className="bg-color text-black py-8">
         <div className="container mx-auto flex flex-wrap justify-between px-4">
             
             <div className="w-full md:w-1/2 lg:w-1/4 mb-4">
