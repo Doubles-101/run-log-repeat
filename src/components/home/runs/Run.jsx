@@ -27,31 +27,31 @@ export const Run = ({runObject, setLikeList}) => {
     }, [runDetails])
 
     return (
-        <div>
-            <div className="bg-blue-800 text-white p-8 rounded-lg shadow-md m-4">
+        <div className="w-1/3 m-2">
+            <div className="bg-blue-800 text-white rounded-lg shadow-md m-4">
                 <header>
-                <div className="h-1/3 flex items-center justify-center">
+                <div className="flex items-center justify-center bg-white">
                     <img
                         src={runDetails[0]?.user?.profileImg}
                         alt="Profile Image"
-                        className="w-3/4 h-auto rounded-full"
+                        className="w-3/4 h-1/2 rounded-full"
                     />
                 </div>
-                    <h2 className="text-xl font-bold m-2">{runObject.date}</h2>
+                    <h2 className="text-xl ml-4 font-bold m-2">{runObject.date}</h2>
                     <Link className="run-post-profileLink" to={`/profile/${runDetails[0]?.user?.id}`}>
-                        <h2 className="text-lg font-semibold mb-2 hover:text-blue-200">{runDetails[0]?.user?.username}</h2>
+                        <h2 className="text-lg ml-4 font-semibold mb-2 hover:text-blue-200">{runDetails[0]?.user?.username}</h2>
                     </Link>
                 </header>
                 <div>
-                    <h3 className="text-lg mb-2">Distance: {runObject.distance}</h3>
-                    <h3 className="text-lg mb-2">Time: {runObject.time} mins</h3>
-                    <h3 className="text-lg mb-2">Location: {runObject.location}</h3>
+                    <h3 className="text-lg ml-4 mb-2">Distance: {runObject.distance}</h3>
+                    <h3 className="text-lg ml-4 mb-2">Time: {runObject.time} mins</h3>
+                    <h3 className="text-lg ml-4 mb-2">Location: {runObject.location}</h3>
                 </div>
-                <footer className="flex items-center justify-left">
+                <footer className="flex items-center justify-left ml-4 ">
                     <LikeButton runObject={runObject} setLikeCounter={setLikeCounter} likeCounter={likeCounter} setLikeList={setLikeList} />
                     <h3 className="text-lg m-4">Number of Likes: {likeCounter}</h3>
                 </footer>
             </div>
         </div>
-)
+    )
 }

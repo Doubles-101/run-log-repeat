@@ -22,11 +22,11 @@ export const EditRun = ({currentUser}) => {
     }
 
     return (
-
-            <form className="editrun-container">
-                <header><h2>Edit Run</h2></header>
-                <div className="editrun-item">Distance:</div>
+        <div className="width-100 h-screen mx-auto p4">
+            <form className="w-1/2 h-auto mx-auto p4">
+                <div className="">Distance:</div>
                 <input 
+                    className="rounded-lg p-2 m-2"
                     type="text"
                     value={currentEditRun.distance}
                     onChange={() => {
@@ -37,6 +37,7 @@ export const EditRun = ({currentUser}) => {
                 />
                 <div className="editrun-item">Location:</div>
                 <input 
+                    className="rounded-lg p-2 m-2"
                     type="text"
                     value={currentEditRun.location}
                     onChange={() => {
@@ -47,6 +48,7 @@ export const EditRun = ({currentUser}) => {
                 />
                 <div className="editrun-item">Time (Minutes):</div>
                 <input 
+                    className="rounded-lg p-2 m-2"
                     type="number"
                     value={currentEditRun.time}
                     onChange={() => {
@@ -57,6 +59,7 @@ export const EditRun = ({currentUser}) => {
                 />
                 <div className="editrun-item">Temperature (F):</div>
                 <input 
+                    className="rounded-lg p-2 m-2"
                     type="number"
                     value={currentEditRun.temperature}
                     onChange={() => {
@@ -66,9 +69,13 @@ export const EditRun = ({currentUser}) => {
                     }}
                 />
                 <footer>
-                    <button onClick={handleSave}>Save</button>
+                    <button 
+                        className="bg-blue-500 text-white px-4 py-2 m-2 mb-8 transition-all 
+                        duration-300 hover:bg-blue-600 hover:shadow-lg "
+                        onClick={handleSave}>
+                    Save</button>
                 </footer>
             </form>
-        
+        </div>
     )
 }
