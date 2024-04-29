@@ -63,7 +63,6 @@ input:focus {
   outline: none;
 }
 
-/* GLOBAL STYLING FOR ALL THE BUTTONS BUTTONS */
 button {
   padding: 0.5rem 1rem;
   border: 1px solid transparent;

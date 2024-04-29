@@ -21,9 +21,9 @@ export const NavBar = ({currentUser}) => {
                     <button className="ml-8 hover:underline cursor-pointer" onClick={toggleDropdown}>X</button>
                     }
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2">
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2">
                 <div className="color p-2">
-                    <h1 className="text-6xl font-bold font-sans text-center">RUN, LOG, REPEAT</h1>
+                    <h1 className="text-4xl font-bold font-sans text-center">RUN, LOG, REPEAT</h1>
                 </div>
                 </div>
             </div>
@@ -31,7 +31,20 @@ export const NavBar = ({currentUser}) => {
             <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-white z-50 w-4/5 drop">
             {isDropdownOpen &&
                 <ul className="navbar bg-blue-100">
-                    <div className="text-left text-blue-600 mr-64 hover:underline cursor-pointer" onClick={toggleDropdown}>RUNS
+                    <div className="text-left text-blue-600 mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>HOME
+                    {isDropdownOpen && 
+                        <div className="relative">
+                            <ul>
+                                <li className="navbar-li text-black text-left p-2 hover:underline">
+                                    <Link className="navbar-link" to="/">
+                                        Welcome
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    </div>
+                    <div className="text-left text-blue-600 mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>RUNS
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
@@ -59,25 +72,25 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-left mr-64 text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>TRAINING PLANS
+                    <div className="text-left mr-64 text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>BADGES
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
                                 <li className="navbar-li text-black text-left p-2 hover:underline">
                                     <Link className="navbar-link" to="/addrun">
-                                        Add Run
+                                        My Badges
                                     </Link>
                                 </li>
                                 <li className="navbar-li text-black text-left p-2 hover:underline">
                                     <Link className="navbar-link" to="/myruns">
-                                        My Runs
+                                        All Badges
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                     }
                     </div>
-                    <div className="text-left text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
+                    <div className="text-left ml-64 text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>

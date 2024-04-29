@@ -27,8 +27,8 @@ export const Run = ({runObject, setLikeList}) => {
     }, [runDetails])
 
     return (
-        <div className="w-1/3 m-2">
-            <div className="bg-blue-800 text-white rounded-lg shadow-md m-4">
+        <div className="w-1/4 m-4 shadow-lg bg-blue-100">
+            <div className="bg-blue-800 text-white rounded-lg m-4">
                 <header>
                 <div className="flex items-center justify-center bg-white">
                     <img

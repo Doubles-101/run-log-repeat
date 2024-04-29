@@ -13,7 +13,7 @@ export const MyRuns = ({currentUser}) => {
     }, [currentUser])
 
     return (
-        <div className="myruns-container">
+        <div className="flex items-center justify-center h-full">
             <div className="color p-8">
                 <h1 className="text-6xl font-bold font-sans text-center">My Runs</h1>
             </div>
