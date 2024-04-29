@@ -29,9 +29,8 @@ export const Profile = ({currentUser}) => {
         <div className="flex flex-col items-center justify-center h-screen">
           <div className="max-w-4xl w-full bg-gray-100 p-6 rounded-lg shadow-lg flex">
             <div className="w-1/3">
-              {/* Adjust the src attribute with your image URL */}
               <img
-                src="https://images.vexels.com/media/users/3/263225/isolated/preview/846c7cd4a40a52e16386b3cc5cea63f6-marathon-sport-running-shoe.png"
+                src={userProfile.profileImg}
                 alt="Profile Image"
                 className="w-3/4 h-auto rounded-full"
               />

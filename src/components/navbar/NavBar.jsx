@@ -11,11 +11,26 @@ export const NavBar = ({currentUser}) => {
     }
 
     return(
-        <div className="navbar">
-            <button className="ml-8 mr-16 sticky " onClick={toggleDropdown}>=</button>
-            <h2 className="mr-8 text-center">RUN, LOG, REPEAT</h2>
+        <div className="flex flex-col items-center justify-between bg-blue-100">
+            <div className="w-full h-20 flex">
+                <div className="mt-auto mb-auto">
+                    {!isDropdownOpen &&
+                    <button className="ml-8 hover:underline cursor-pointer" onClick={toggleDropdown}>=</button>
+                    }
+                    {isDropdownOpen &&
+                    <button className="ml-8 hover:underline cursor-pointer" onClick={toggleDropdown}>X</button>
+                    }
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2">
+                <div className="color p-2">
+                    <h1 className="text-6xl font-bold font-sans text-center">RUN, LOG, REPEAT</h1>
+                </div>
+                </div>
+            </div>
+
+            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-white z-50 w-4/5 drop">
             {isDropdownOpen &&
-                <ul className="navbar">
+                <ul className="navbar bg-blue-100">
                     <div className="text-left text-blue-600 mr-64 hover:underline cursor-pointer" onClick={toggleDropdown}>RUNS
                     {isDropdownOpen && 
                         <div className="relative">
@@ -62,17 +77,17 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-right ml-64  text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
+                    <div className="text-left text-blue-600 hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
-                                <li className="navbar-li text-black text-right p-2 hover:underline">
+                                <li className="navbar-li text-black text-left p-2 hover:underline">
                                     <Link className="navbar-link" to={`/profile/${currentUser.id}`}>
                                         My Profile
                                     </Link>
                                 </li>
                                 {localStorage.getItem("honey_user") ? (
-                                <li className="navbar-li text-black text-right p-2 underline">
+                                <li className="navbar-li text-black text-left p-2 underline">
                                     <Link
                                     className="navbar-link"
                                     to=""
@@ -93,6 +108,7 @@ export const NavBar = ({currentUser}) => {
                     </div>
                 </ul>
             }
+            </div>
         </div>
     )
 }
