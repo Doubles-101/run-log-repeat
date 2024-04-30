@@ -36,7 +36,7 @@ export const AddRun = ({currentUser}) => {
 
     return (
     <div className="w-100 mx-auto p-4">
-        <form className="w-1/2 mx-auto p-4">
+        <form className="w-1/2 mx-auto bg-third p-4">
             <fieldset>
                 <select 
                 className="rounded-lg p-2 m-2 placeholder:italic"
@@ -49,7 +49,7 @@ export const AddRun = ({currentUser}) => {
                     })}
                 </select>
             </fieldset>
-            <fieldset required>
+            <fieldset required className="text-first">
                 <input 
                     className="rounded-lg p-2 m-2 placeholder:italic"
                     type="text"
@@ -64,7 +64,7 @@ export const AddRun = ({currentUser}) => {
                 />
                 Location
             </fieldset>
-            <fieldset>
+            <fieldset  className="text-first">
             <input 
                     className="rounded-lg p-2 m-2 placeholder:italic"
                     type="number"
@@ -79,7 +79,7 @@ export const AddRun = ({currentUser}) => {
                 />
                 Distance
             </fieldset>
-            <fieldset>
+            <fieldset  className="text-first">
             <input 
                     className="rounded-lg p-2 m-2 placeholder:italic"
                     type="number"
@@ -94,7 +94,7 @@ export const AddRun = ({currentUser}) => {
                 />
                 Time
             </fieldset>
-            <fieldset>
+            <fieldset  className="text-first">
             <input 
                     className="rounded-lg p-2 m-2 placeholder:italic"
                     type="date"
@@ -109,7 +109,7 @@ export const AddRun = ({currentUser}) => {
                 />
                 Date
             </fieldset>
-            <fieldset>
+            <fieldset  className="text-first">
             <input 
                     className="rounded-lg p-2 m-2 placeholder:italic"
                     type="number"
@@ -140,8 +140,8 @@ export const AddRun = ({currentUser}) => {
             </fieldset>
             
             <button 
-            className="bg-blue-500 text-white px-4 py-2 m-2 transition-all 
-            duration-300 hover:bg-blue-600 hover:shadow-lg"
+            className="bg-first text-white px-4 py-2 m-2 transition-all 
+            duration-300 hover:bg-fourth hover:shadow-lg"
             onClick={handleSaveClick}>Save</button>
         </form>
     </div>

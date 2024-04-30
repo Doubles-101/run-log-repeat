@@ -88,16 +88,16 @@ export const LikeButton = ({runObject, setLikeCounter, likeCounter, setLikeList}
 
         {/* If the post has not been Liked display this */}
         {!liked && 
-        <button className="bg-blue-500 text-white px-4 py-2 m-2 transition-all 
+        <button className="bg-fourth text-white px-4 py-2 m-2 transition-all 
         duration-300 hover:bg-blue-600 hover:shadow-lg" onClick={handleLike}>Like</button>}
 
         {/* If the post has been Liked display this */}
         {liked && 
-        <button className="bg-blue-500 text-white px-4 py-2 m-2 transition-all 
+        <button className="bg-second text-white px-4 py-2 m-2 transition-all 
         duration-300 hover:bg-blue-600 hover:shadow-lg" onClick={handleUnlike}>Unlike</button>}
             
        
-        <button className="bg-blue-500 text-white px-4 py-2 m-2 transition-all 
+        <button className="bg-fourth text-white px-4 py-2 m-2 transition-all 
         duration-300 hover:bg-blue-600 hover:shadow-lg" onClick={handleDetails}>Details</button>
         
         </>

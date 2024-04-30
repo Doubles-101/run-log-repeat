@@ -14,7 +14,7 @@ export const Likes = ({currentUser}) => {
 
     return (
         <div className="likes-container">
-            <div className="color p-8">
+            <div className="color text-first p-8">
                 <h1 className="text-6xl font-bold font-sans text-center">Liked Runs </h1>
             </div>
             {likeList.map((likedRun) => {

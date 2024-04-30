@@ -15,15 +15,10 @@ font-family: "Roboto", sans-serif;
 /* COLOR PALETTE */
 /* Feel free to change these values and create your own color palette! https://coolors.co/ is a great resource */
 :root {
-  --primary: #415A77;
-  --secondary: #778DA9;
-  --info: #7fb800;
-  --warning: #f6511d;
-  --white: #ffffff;
-  --offWhite: #E0E1DD;
-  --dark: #0d1b2a;
-  --outline: #1B263B;
-  --appBackground: #dddade;
+  --first: #50A5B1;
+  --second: #F1600D;
+  --third: #FEF6ED;
+  --fourth: #1A265A;
 }
 
 /* GLOBAL STYLES */

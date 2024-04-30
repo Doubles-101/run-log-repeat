@@ -24,13 +24,13 @@ export const EditProfile = ({currentUser}) => {
 
     return (
         <div className="width-100 h-screen mx-auto p4">
-            <form className="w-1/2 h-auto mx-auto p4">
+            <form className="w-1/2 bg-third h-auto mx-auto p4">
                 <header>
-                <div className="color p-4">
+                <div className="color text-first p-4">
                     <h1 className="text-4xl font-bold font-sans text-center">Edit Run</h1>
                 </div>
                 </header>
-                <div className="">Username:</div>
+                <div className="text-first">Username:</div>
                 <input 
                     className="rounded-lg p-2 m-2"
                     type="text"
@@ -41,7 +41,7 @@ export const EditProfile = ({currentUser}) => {
                         setUserInfo(profileCopy)
                     }}
                 />
-                <div className="myprofile-item">Email:</div>
+                <div className="text-first">Email:</div>
                 <input 
                     className="rounded-lg p-2 m-2"
                     type="text"
@@ -52,7 +52,7 @@ export const EditProfile = ({currentUser}) => {
                         setUserInfo(profileCopy)
                     }}
                 />
-                <div className="myprofile-item">Profile Image Url:</div>
+                <div className="text-first">Profile Image Url:</div>
                 <input 
                     className="rounded-lg p-2 m-2"
                     type="text"
@@ -66,7 +66,7 @@ export const EditProfile = ({currentUser}) => {
                 
                 <footer>
                     <button 
-                        className="bg-blue-500 text-white px-4 py-2 m-2 mb-8 transition-all 
+                        className="bg-first text-white px-4 py-2 m-2 mb-8 transition-all 
                         duration-300 hover:bg-blue-600 hover:shadow-lg "
                         onClick={handleSave}>Save
                     </button>
