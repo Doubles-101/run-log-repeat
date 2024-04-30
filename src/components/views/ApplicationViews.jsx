@@ -11,6 +11,8 @@ import { EditProfile } from "../profile/EditProfile.jsx"
 import { RunDetails } from "../rundetails/RunDetails.jsx"
 import { EditRun } from "../rundetails/EditRun.jsx"
 import { Footer } from "../footer/Footer.jsx"
+import { AllBadges } from "../badges/AllBadges.jsx"
+import { MyBadges } from "../badges/MyBadges.jsx"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({}) 
@@ -47,6 +49,8 @@ export const ApplicationViews = () => {
                     <Route path=":profileId" element={<Profile currentUser={currentUser}/>} />
                 </Route>
                 <Route path="editprofile" element={<EditProfile currentUser={currentUser}/>} />
+                <Route path="allbadges" element={<AllBadges />} />
+                <Route path="mybadges" element={<MyBadges currentUser={currentUser}/>} />
             </Route>    
         </Routes>
     )

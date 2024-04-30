@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import "./Profile.css"
-import { getMyProfile } from "../../services/getProfile.jsx"
+import { getMyProfile, getUserBadgeCount } from "../../services/getProfile.jsx"
 import { Link, useNavigate, useParams } from "react-router-dom"
 
 export const Profile = ({currentUser}) => {
     const [userProfile, setUserProfile] = useState({})
+    const [userBadgeCount, setUserBadgeCount] = useState(0)
 
     const { profileId } = useParams()
     const navigate = useNavigate()
@@ -19,6 +20,12 @@ export const Profile = ({currentUser}) => {
                 setUserProfile(userArray)
              })
         }
+    }, [currentUser])
+
+    useEffect(() => {
+      getUserBadgeCount(profileId).then((badgeArr) => {
+        setUserBadgeCount(badgeArr.length)
+      })
     }, [currentUser])
 
     const handleEdit = () => {
@@ -40,6 +47,9 @@ export const Profile = ({currentUser}) => {
               <div className="myprofile-item">{userProfile.email}</div>
               <div className="myprofile-item">
                 Number of Runs: {userProfile.runs?.length}
+              </div>
+              <div className="myprofile-item">
+                {userBadgeCount}/11 Badges 
               </div>
               {userProfile.id === currentUser.id && (
                 <Link to={`/editprofile`} className="mt-4">

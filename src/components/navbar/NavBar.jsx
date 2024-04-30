@@ -77,12 +77,12 @@ export const NavBar = ({currentUser}) => {
                         <div className="relative">
                             <ul>
                                 <li className="navbar-li text-black text-left p-2 hover:underline">
-                                    <Link className="navbar-link" to="/addrun">
+                                    <Link className="navbar-link" to="/mybadges">
                                         My Badges
                                     </Link>
                                 </li>
                                 <li className="navbar-li text-black text-left p-2 hover:underline">
-                                    <Link className="navbar-link" to="/myruns">
+                                    <Link className="navbar-link" to="/allbadges">
                                         All Badges
                                     </Link>
                                 </li>
