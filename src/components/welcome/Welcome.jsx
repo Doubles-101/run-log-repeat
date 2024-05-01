@@ -11,7 +11,7 @@ export const Welcome = ({currentUser}) => {
         getWelcome(currentUser.id).then((userArr) => {
             setUserInfo(userArr)
         })
-    }, [currentUser])
+    }, [currentUser] ,2000)
 
     const navigate = useNavigate()
 

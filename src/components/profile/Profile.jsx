@@ -24,7 +24,12 @@ export const Profile = ({currentUser}) => {
 
     useEffect(() => {
       getUserBadgeCount(profileId).then((badgeArr) => {
-        setUserBadgeCount(badgeArr.length)
+        let badgeString = ""
+        for (const badge of badgeArr) {
+          badgeString += "★"
+        }
+
+        setUserBadgeCount(badgeString)
       })
     }, [currentUser])
 
@@ -49,7 +54,7 @@ export const Profile = ({currentUser}) => {
                 Number of Runs: {userProfile.runs?.length}
               </div>
               <div className="myprofile-item">
-                {userBadgeCount}/11 Badges 
+                {userBadgeCount}
               </div>
               {userProfile.id === currentUser.id && (
                 <Link to={`/editprofile`} className="mt-4">
