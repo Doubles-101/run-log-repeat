@@ -34,7 +34,7 @@ export const ApplicationViews = () => {
                     <Footer />
                 </>
             }>
-                <Route index element={<Welcome />} />
+                <Route index element={<Welcome currentUser={currentUser}/>} />
                 <Route path="home" element={<Home />} />
                 <Route path="addrun" element={<AddRun currentUser={currentUser}/>} />
                 <Route path="myruns" element={<MyRuns currentUser={currentUser}/>} />
