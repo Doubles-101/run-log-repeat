@@ -23,7 +23,7 @@ export const EditRun = ({currentUser}) => {
 
     return (
         <div className="width-100 h-screen mx-auto p4">
-            <form className="w-1/2 h-auto mx-auto p4">
+            <form className="w-1/2 h-auto mx-auto p4 bg-third">
                 <div className="">Distance:</div>
                 <input 
                     className="rounded-lg p-2 m-2"
@@ -70,8 +70,8 @@ export const EditRun = ({currentUser}) => {
                 />
                 <footer>
                     <button 
-                        className="bg-blue-500 text-white px-4 py-2 m-2 mb-8 transition-all 
-                        duration-300 hover:bg-blue-600 hover:shadow-lg "
+                        className="bg-first text-white px-4 py-2 m-2 mb-8 transition-all 
+                        duration-300 hover:bg-fourth hover:shadow-lg"
                         onClick={handleSave}>
                     Save</button>
                 </footer>

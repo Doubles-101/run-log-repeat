@@ -2,12 +2,12 @@ import "./Footer.css"
 
 export const Footer = () => {
     return (
-        <footer className="bg-blue-100 text-black py-8">
-        <div className="container mx-auto flex flex-wrap justify-between px-4 text-blue-800">
+        <footer className="bg-white text-first py-8">
+        <div className="container mx-auto flex flex-wrap justify-between px-4">
             
             <div className="w-full md:w-1/2 lg:w-1/4 mb-4">
             <h2 className="text-lg font-semibold mb-4">About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida tellus at nunc fermentum, vel cursus enim faucibus.</p>
+            <p>We are a site commited to helping runners log their runs while also connecting with others. Runing should be fun, we hope this site helps with that!</p>
             </div>
 
             

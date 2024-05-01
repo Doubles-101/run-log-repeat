@@ -1,8 +1,17 @@
 import { useNavigate } from "react-router-dom"
 import "./Welcome.css"
+import { useEffect, useState } from "react"
+import { getWelcome } from "../../services/getWelcome.jsx"
 
 
 export const Welcome = ({currentUser}) => {
+    const [userInfo, setUserInfo] = useState([])
+
+    useEffect(() => {
+        getWelcome(currentUser.id).then((userArr) => {
+            setUserInfo(userArr)
+        })
+    }, [currentUser])
 
     const navigate = useNavigate()
 
@@ -25,7 +34,7 @@ export const Welcome = ({currentUser}) => {
     return (
        <div className="flex flex-col justify-center align-center">
             <div className="flex bg-first box">
-                <div className="text-white text-9xl text-sans font-bold mx-auto my-auto">Welcome!!</div>
+                <div className="text-white text-6xl text-sans font-bold mx-auto my-auto">Welcome!! {userInfo[0]?.username}</div>
                 <button className="text-white text-5xl text-sans font-bold mx-auto my-auto bg-fourth text-white px-4 py-2 m-2 transition-all 
                     duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-second"
                     onClick={addRunClick}
