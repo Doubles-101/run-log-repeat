@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    background-color: var(--primary);
+    background-color: white;
     margin: 0;
     width: 100%;
     padding: 0.5rem;
@@ -10,7 +10,7 @@
     flex-grow: 1;
     list-style-type: none;
     text-align: center;
-    color: var(--offWhite);
+    color: black;
   }
 
   .navbar-link {
@@ -24,5 +24,9 @@
   }
 
   .navbar-link:hover {
-    color: var(--dark);
+    color: lightslategray;
   }
+
+  
+  
+  

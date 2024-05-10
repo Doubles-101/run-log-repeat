@@ -4,7 +4,10 @@ import { AllRuns } from "./runs/AllRuns.jsx"
 export const Home = () => {
     return (
         <>
-        <h1>Home</h1>
+        <div className="text-first p-8">
+            <h1 className="text-6xl font-bold font-sans text-center">All Runs</h1>
+        </div>
+
         <AllRuns />
         </>
     )

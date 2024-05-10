@@ -23,30 +23,55 @@ export const EditProfile = ({currentUser}) => {
     }
 
     return (
-        <form className="editprofile-container">
-            <header><h2>Edit Profile</h2></header>
-            <div className="myprofile-item">Username:</div>
-            <input 
-                type="text"
-                value={userInfo.username}
-                onChange={() => {
-                    const profileCopy = {...userInfo}
-                    profileCopy.username = event.target.value
-                    setUserInfo(profileCopy)
-                }}
-            />
-            <div className="myprofile-item">Email:</div>
-            <input 
-                type="text"
-                value={userInfo.email}
-                onChange={() => {
-                    const profileCopy = {...userInfo}
-                    profileCopy.email = event.target.value
-                    setUserInfo(profileCopy)
-                }}
-            />
-            
-            <footer><button onClick={handleSave}>Save</button></footer>
-        </form>
+        <div className="width-100 h-screen mx-auto p4">
+            <form className="w-1/2 bg-third h-auto mx-auto p4">
+                <header>
+                <div className="color text-first p-4">
+                    <h1 className="text-4xl font-bold font-sans text-center">Edit Run</h1>
+                </div>
+                </header>
+                <div className="text-first">Username:</div>
+                <input 
+                    className="rounded-lg p-2 m-2"
+                    type="text"
+                    value={userInfo.username}
+                    onChange={() => {
+                        const profileCopy = {...userInfo}
+                        profileCopy.username = event.target.value
+                        setUserInfo(profileCopy)
+                    }}
+                />
+                <div className="text-first">Email:</div>
+                <input 
+                    className="rounded-lg p-2 m-2"
+                    type="text"
+                    value={userInfo.email}
+                    onChange={() => {
+                        const profileCopy = {...userInfo}
+                        profileCopy.email = event.target.value
+                        setUserInfo(profileCopy)
+                    }}
+                />
+                <div className="text-first">Profile Image Url:</div>
+                <input 
+                    className="rounded-lg p-2 m-2"
+                    type="text"
+                    value={userInfo.profileImg}
+                    onChange={() => {
+                        const profileCopy = {...userInfo}
+                        profileCopy.profileImg = event.target.value
+                        setUserInfo(profileCopy)
+                    }}
+                />
+                
+                <footer>
+                    <button 
+                        className="bg-first text-white px-4 py-2 m-2 mb-8 transition-all 
+                        duration-300 hover:bg-blue-600 hover:shadow-lg "
+                        onClick={handleSave}>Save
+                    </button>
+                </footer>
+            </form>
+        </div>
     )
 }

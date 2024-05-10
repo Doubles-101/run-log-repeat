@@ -29,25 +29,33 @@ export const RunDetails = ({currentUser}) => {
     
     
     return (
-        <div className="rundetails-container">
-            <header>
-                <h1>{currentRun.user?.username}</h1>
-                <h2>{currentRun.runType?.type}</h2>
-                <h2>{currentRun.date}</h2>
-                <h2>{currentRun.time} Minutes</h2>
-            </header>
-            <div>
-                <h3>Distance  :  {currentRun.distance} Miles</h3>
-                <h3>Temperature  :  {currentRun.temperature}F</h3>
-                <h3>Location  :  {currentRun.location}</h3>
-            </div>
-            <footer>
-                {currentUser.id === currentRun.user?.id &&
-                <button onClick={handleEdit}>Edit</button>}
+        <div className="flex flex-col items-center justify-center h-screen">
+            <div className="max-w-4xl w-full bg-third p-6 rounded-lg shadow-lg">
+                <header>
+                    <h1>{currentRun.user?.username}</h1>
+                    <h2>{currentRun.runType?.type}</h2>
+                    <h2>{currentRun.date}</h2>
+                    <h2>{currentRun.time} Minutes</h2>
+                </header>
+                <div>
+                    <h3>Distance  :  {currentRun.distance} Miles</h3>
+                    <h3>Temperature  :  {currentRun.temperature}F</h3>
+                    <h3>Location  :  {currentRun.location}</h3>
+                </div>
+                <footer>
+                    {currentUser.id === currentRun.user?.id &&
+                    <button 
+                        onClick={handleEdit}
+                        className="px-4 py-2 bg-first text-white rounded hover:bg-fourth"
+                    >Edit</button>}
 
-                {currentUser.id === currentRun.user?.id &&
-                <button className="btn-warning" onClick={handleDelete}>Delete</button>}
-            </footer>
+                    {currentUser.id === currentRun.user?.id &&
+                    <button 
+                        onClick={handleDelete}
+                        className="px-4 py-2 ml-2 bg-second text-white rounded hover:bg-fourth"    
+                    >Delete</button>}
+                </footer>
+            </div>
         </div>
     )
 }

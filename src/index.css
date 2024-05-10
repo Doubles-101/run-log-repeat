@@ -1,3 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 /* Import the google web fonts you want to use */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Quicksand&family=Roboto:wght@100&display=swap");
 
@@ -10,15 +15,10 @@ font-family: "Roboto", sans-serif;
 /* COLOR PALETTE */
 /* Feel free to change these values and create your own color palette! https://coolors.co/ is a great resource */
 :root {
-  --primary: #415A77;
-  --secondary: #778DA9;
-  --info: #7fb800;
-  --warning: #f6511d;
-  --white: #ffffff;
-  --offWhite: #E0E1DD;
-  --dark: #0d1b2a;
-  --outline: #1B263B;
-  --appBackground: #dddade;
+  --first: #50A5B1;
+  --second: #F1600D;
+  --third: #FEF6ED;
+  --fourth: #1A265A;
 }
 
 /* GLOBAL STYLES */
@@ -31,7 +31,7 @@ textarea {
 }
 
 body {
-  background-color: var(--appBackground);
+  background-color: white;
   margin: 0;
 }
 
@@ -58,7 +58,6 @@ input:focus {
   outline: none;
 }
 
-/* GLOBAL STYLING FOR ALL THE BUTTONS BUTTONS */
 button {
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
@@ -67,47 +66,4 @@ button {
   cursor: pointer;
 }
 
-/* These are all the color options for the buttons */
-/* If you change the color variables, be sure to change the hover colors to be a darker shade of the colors you chose*/
-.btn-primary {
-  background-color: var(--primary);
-}
-
-.btn-primary:hover {
-  background-color: #e5a000;
-}
-
-.btn-secondary {
-  background-color: var(--secondary);
-}
-
-.btn-secondary:hover {
-  background-color: #0097d7;
-}
-
-.btn-warning {
-  background-color: var(--warning);
-}
-
-.btn-warning:hover {
-  background-color: #e14617;
-}
-
-.btn-info {
-  background-color: var(--info);
-}
-
-.btn-info:hover {
-  background-color: #71a500;
-}
-
-/* This CSS can be deleted. It is only used for the first chapter */
-.welcome {
-  text-align: center;
-  margin: 5rem 14rem;
-  font-size: 4rem;
-  color: aliceblue;
-  font-weight: bold;
-  text-shadow: 2px 3px 4px lightslategray;
-}
 

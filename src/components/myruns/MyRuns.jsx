@@ -13,14 +13,18 @@ export const MyRuns = ({currentUser}) => {
     }, [currentUser])
 
     return (
-        <div className="myruns-container">
-            <h2>My Runs</h2>
-            {myRunsList.map((runObject) => {
-                return (
-                    /* Run module is located in home/runs/Run.jsx */
-                    <Run runObject={runObject} key={runObject.id} />
-                )
-            })}
+        <div className="flex flex-col items-center justify-center h-full">
+            <div className="text-first text-center p-8">
+                <h1 className="text-6xl font-bold font-sans w-screen">My Runs</h1>
+            </div>
+            <div className="flex items-center justify-center h-full w-screen">
+                {myRunsList.map((runObject) => {
+                    return (
+                        /* Run module is located in home/runs/Run.jsx */
+                        <Run runObject={runObject} key={runObject.id} />
+                    )
+                })}
+            </div>
         </div>
     )
 }

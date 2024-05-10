@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import "./Profile.css"
-import { getMyProfile } from "../../services/getProfile.jsx"
+import { getMyProfile, getUserBadgeCount } from "../../services/getProfile.jsx"
 import { Link, useNavigate, useParams } from "react-router-dom"
 
 export const Profile = ({currentUser}) => {
     const [userProfile, setUserProfile] = useState({})
+    const [userBadgeCount, setUserBadgeCount] = useState(0)
 
     const { profileId } = useParams()
     const navigate = useNavigate()
@@ -21,23 +22,54 @@ export const Profile = ({currentUser}) => {
         }
     }, [currentUser])
 
+    useEffect(() => {
+      getUserBadgeCount(profileId).then((badgeArr) => {
+        let badgeString = ""
+        for (const badge of badgeArr) {
+          badgeString += "★"
+        }
+
+        setUserBadgeCount(badgeString)
+      })
+    }, [currentUser])
+
     const handleEdit = () => {
         console.log("Edit") 
     }
 
     return (
-        <div className="myprofile-container">
-            <div className="myprofile-item">{userProfile.username}</div>
-            <div className="myprofile-item">{userProfile.email}</div>
-            <div className="myprofile-item">
-                Number of Runs :
-                {userProfile.runs?.length}
+        <div className="flex flex-col items-center justify-center h-screen">
+          <div className="max-w-4xl w-full bg-third p-6 rounded-lg shadow-lg flex">
+            <div className="w-1/3">
+              <img
+                src={userProfile.profileImg}
+                alt="Profile Image"
+                className="w-3/4 h-auto rounded-full"
+              />
             </div>
-            {userProfile.id === currentUser.id &&
-            <Link to={`/editprofile`}>
-                <button onClick={handleEdit}>Edit</button>
-            </Link>
-            }
+            <div className="w-2/3 px-12">
+              <div className="myprofile-item">{userProfile.username}</div>
+              <div className="myprofile-item">{userProfile.email}</div>
+              <div className="myprofile-item">
+                Number of Runs: {userProfile.runs?.length}
+              </div>
+              <div className="myprofile-item">
+                {userBadgeCount}
+              </div>
+              {userProfile.id === currentUser.id && (
+                <Link to={`/editprofile`} className="mt-4">
+                  <button
+                    onClick={handleEdit}
+                    className="px-4 py-2 bg-first text-white rounded hover:bg-fourth"
+                  >
+                    Edit
+                  </button>
+                </Link>
+              )}
+            </div>
+          </div>
         </div>
-    )
+      )
+      
+      
 }

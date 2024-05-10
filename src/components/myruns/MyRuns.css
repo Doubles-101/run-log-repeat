@@ -7,16 +7,4 @@
     align-items: center;
 }
 
-.allruns-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-}
 
-.run-post {
-    background-color: aliceblue;
-    border: solid 1px black;
-}

@@ -17,8 +17,7 @@ export const Login = () => {
         localStorage.setItem(
           "honey_user",
           JSON.stringify({
-            id: user.id,
-            isStaff: user.isStaff,
+            id: user.id
           })
         )
 
@@ -30,18 +29,18 @@ export const Login = () => {
   }
 
   return (
-    <main className="container-login">
-      <section>
-        <form className="form-login" onSubmit={handleLogin}>
-          <h1>Run Log Repeat</h1>
-          <h2>Please sign in</h2>
+    <main className="flex flex-col w-100 h-screen mx-auto">
+      <section className="w-1/2 mx-auto my-auto p-4">
+        <form className="flex flex-col w-1/2 mx-auto my-auto bg-third p-4" onSubmit={handleLogin}>
+          <h1 className="text-first text-center text-6xl text-sans font-bold mx-auto my-auto">Run Log Repeat</h1>
+          <h2 className="text-first text-center text-2xl text-sans font-bold mx-auto my-4">Please sign in</h2>
           <fieldset>
             <div className="form-group">
               <input
                 type="email"
                 value={email}
                 onChange={(evt) => set(evt.target.value)}
-                className="form-control"
+                className="rounded-lg p-2 m-2 placeholder:italic"
                 placeholder="Email address"
                 required
                 autoFocus
@@ -50,15 +49,17 @@ export const Login = () => {
           </fieldset>
           <fieldset>
             <div className="form-group">
-              <button className="login-btn btn-info" type="submit">
+              <button className="bg-first text-white px-4 py-2 m-2 transition-all 
+              duration-300 hover:bg-fourth hover:shadow-lg" 
+              type="submit">
                 Sign in
               </button>
             </div>
           </fieldset>
+          <div className="text-fourth text-center">
+            <Link to="/register">Not a member yet?</Link>
+          </div>
         </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
       </section>
     </main>
   )

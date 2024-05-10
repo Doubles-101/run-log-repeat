@@ -17,3 +17,7 @@ export const getPutProfile = (newProfile) => {
         body: JSON.stringify(newProfile)
     })
 }
+
+export const getUserBadgeCount = (userId) => {
+    return fetch(`http://localhost:8088/userBadges?userId=${userId}`).then(res => res.json())
+}
