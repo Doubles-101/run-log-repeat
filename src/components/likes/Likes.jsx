@@ -13,7 +13,7 @@ export const Likes = ({currentUser}) => {
     }, [currentUser])
 
     return (
-        <div className="likes-container">
+        <div className="likes-container dark:bg-fourth">
             <div className="text-center text-first p-8">
                 <h1 className="text-6xl font-bold font-sans text-center">Liked Runs </h1>
             </div>

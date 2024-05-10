@@ -29,8 +29,8 @@ export const RunDetails = ({currentUser}) => {
     
     
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <div className="max-w-4xl w-full bg-third p-6 rounded-lg shadow-lg">
+        <div className="flex flex-col items-center justify-center h-screen dark:bg-fourth">
+            <div className="max-w-4xl w-full bg-third dark:bg-first p-6 rounded-lg shadow-lg">
                 <header>
                     <h1>{currentRun.user?.username}</h1>
                     <h2>{currentRun.runType?.type}</h2>
@@ -46,7 +46,7 @@ export const RunDetails = ({currentUser}) => {
                     {currentUser.id === currentRun.user?.id &&
                     <button 
                         onClick={handleEdit}
-                        className="px-4 py-2 bg-first text-white rounded hover:bg-fourth"
+                        className="px-4 py-2 bg-first text-white rounded hover:bg-fourth dark:bg-fourth dark:hover:bg-second"
                     >Edit</button>}
 
                     {currentUser.id === currentRun.user?.id &&
