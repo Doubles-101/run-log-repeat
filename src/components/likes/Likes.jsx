@@ -27,3 +27,4 @@ export const Likes = ({currentUser}) => {
         </div>
     )
 }
+

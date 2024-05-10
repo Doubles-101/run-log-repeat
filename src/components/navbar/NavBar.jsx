@@ -15,10 +15,10 @@ export const NavBar = ({currentUser}) => {
             <div className="w-full h-20 flex">
                 <div className="mt-auto mb-auto">
                     {!isDropdownOpen &&
-                    <button className="ml-8 hover:underline cursor-pointer" onClick={toggleDropdown}>=</button>
+                    <button className="ml-8 hover:underline cursor-pointer text-4xl" onClick={toggleDropdown}>=</button>
                     }
                     {isDropdownOpen &&
-                    <button className="ml-8 hover:underline cursor-pointer" onClick={toggleDropdown}>X</button>
+                    <button className="ml-8 hover:underline cursor-pointer text-2xl" onClick={toggleDropdown}>X</button>
                     }
                 </div>
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-first">
