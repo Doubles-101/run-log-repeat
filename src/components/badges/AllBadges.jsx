@@ -22,7 +22,7 @@ export const AllBadges = () => {
                     <li><div className="flex m-2"><PiPersonSimpleRunLight className="mr-2"/>Run 1 Mile</div></li>
                     <li><div className="flex m-2"><PiPersonSimpleRunThin className="mr-2"/>Run 10 Miles</div></li>
                     <li><div className="flex m-2"><LiaRunningSolid className="mr-2"/>Run 50 Miles</div></li>
-                    <li><div className="flex m-2"><FaRunning className="mr-2"/>{"★"}Run 100 Miles</div></li>
+                    <li><div className="flex m-2"><FaRunning className="mr-2"/>Run 100 Miles</div></li>
                 </ul>
             </div>
         </div>
