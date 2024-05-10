@@ -22,9 +22,9 @@ export const NavBar = ({currentUser}) => {
     }
 
     return(
-        <div className="flex flex-col items-center justify-between bg-white dark:bg-fourth">
+        <div className="flex flex-col items-center justify-between bg-white dark:bg-first">
             <div className="w-full h-20 flex">
-                <div className="mt-auto mb-auto">
+                <div className="mt-auto mb-auto text-first dark:text-fourth">
                     {!isDropdownOpen &&
                     <button className="ml-8 hover:underline cursor-pointer text-4xl" onClick={toggleDropdown}><GiHamburgerMenu /></button>
                     }
@@ -32,11 +32,12 @@ export const NavBar = ({currentUser}) => {
                     <button className="ml-8 hover:underline cursor-pointer text-2xl" onClick={toggleDropdown}>X</button>
                     }
                 </div>
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-first">
+                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-first dark:text-fourth">
                 <div className="color p-2">
                     <h1 className="text-4xl font-bold font-sans text-center">RUN, LOG, REPEAT</h1>
                 </div>
-                <div className="bg-white dark:bg-fourth">
+                </div>
+                <div className="absolute top-2 right-8 p-4 bg-white dark:bg-first text-first dark:text-fourth">
                     <button onClick={()=> darkModeHandler()}>
                     {
                         dark && <IoSunny />
@@ -46,13 +47,12 @@ export const NavBar = ({currentUser}) => {
                     }
                     </button>
                 </div>
-                </div>
             </div>
 
             <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-white dark:bg-fourth z-50 w-4/5 drop">
             {isDropdownOpen &&
-                <ul className="navbar bg-white">
-                    <div className="text-left text-first mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>HOME
+                <ul className="navbar bg-white dark:bg-first">
+                    <div className="text-left text-first dark:text-fourth mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>HOME
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
@@ -65,7 +65,7 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-left text-first mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>RUNS
+                    <div className="text-left text-first dark:text-fourth mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>RUNS
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
@@ -93,7 +93,7 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-left mr-64 text-first hover:underline cursor-pointer" onClick={toggleDropdown}>BADGES
+                    <div className="text-left mr-64 text-first dark:text-fourth  hover:underline cursor-pointer" onClick={toggleDropdown}>BADGES
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
@@ -111,7 +111,7 @@ export const NavBar = ({currentUser}) => {
                         </div>
                     }
                     </div>
-                    <div className="text-left ml-64 text-first hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
+                    <div className="text-left ml-64 text-first dark:text-fourth hover:underline cursor-pointer" onClick={toggleDropdown}>PROFILE
                     {isDropdownOpen && 
                         <div className="relative">
                             <ul>
