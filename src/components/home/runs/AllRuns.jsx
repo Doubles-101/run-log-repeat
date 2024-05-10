@@ -11,7 +11,7 @@ export const AllRuns = () => {
         })
     }, [])
     return (
-        <div className="allruns-container" key={runs.id}>
+        <div className="allruns-container dark:bg-fourth" key={runs.id}>
             {runs.map((runObject) => {
                 return (
                     <Run className="" runObject={runObject} key={runObject.id}/>

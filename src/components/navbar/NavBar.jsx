@@ -2,17 +2,27 @@ import { useState } from "react"
 import "./NavBar.css"
 import { Link } from "react-router-dom"
 import { GiHamburgerMenu } from "react-icons/gi"
+import React from "react"
+import { IoMoon } from "react-icons/io5"
+import { IoSunny } from "react-icons/io5"
+import { IconContext } from "react-icons"
 
 
 export const NavBar = ({currentUser}) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+    const [dark, setDark] = useState(false)
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen)
     }
 
+    const darkModeHandler = () => {
+        setDark(!dark)
+        document.body.classList.toggle("dark")
+    }
+
     return(
-        <div className="flex flex-col items-center justify-between bg-white">
+        <div className="flex flex-col items-center justify-between bg-white dark:bg-fourth">
             <div className="w-full h-20 flex">
                 <div className="mt-auto mb-auto">
                     {!isDropdownOpen &&
@@ -26,10 +36,20 @@ export const NavBar = ({currentUser}) => {
                 <div className="color p-2">
                     <h1 className="text-4xl font-bold font-sans text-center">RUN, LOG, REPEAT</h1>
                 </div>
+                <div className="bg-white dark:bg-fourth">
+                    <button onClick={()=> darkModeHandler()}>
+                    {
+                        dark && <IoSunny />
+                    }
+                    {
+                        !dark && <IoMoon />
+                    }
+                    </button>
+                </div>
                 </div>
             </div>
 
-            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-white z-50 w-4/5 drop">
+            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 bg-white dark:bg-fourth z-50 w-4/5 drop">
             {isDropdownOpen &&
                 <ul className="navbar bg-white">
                     <div className="text-left text-first mr-32 hover:underline cursor-pointer" onClick={toggleDropdown}>HOME

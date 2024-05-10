@@ -27,10 +27,10 @@ export const Run = ({runObject, setLikeList}) => {
     }, [runDetails])
 
     return (
-        <div className="w-1/4 m-4 shadow-lg bg-fourth">
-            <div className="bg-first text-third rounded-lg m-4">
+        <div className="w-1/4 m-4 shadow-lg bg-fourth dark:bg-first">
+            <div className="bg-first dark:bg-fourth text-third rounded-lg m-4">
                 <header>
-                <div className="flex items-center justify-center bg-white">
+                <div className="flex items-center justify-center bg-white dark:bg-fourth">
                     <img
                         src={runDetails[0]?.user?.profileImg}
                         alt="Profile Image"

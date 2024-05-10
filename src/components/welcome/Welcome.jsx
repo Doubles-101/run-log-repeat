@@ -40,8 +40,8 @@ export const Welcome = ({currentUser}) => {
                     onClick={addRunClick}
                 >Add Run</button>
             </div>
-            <div className="flex bg-white box">
-                <div className="text-first text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Create
+            <div className="flex bg-white dark:bg-fourth box">
+                <div className="text-first dark:text-white text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Create
                     <h1>Post your running journy or see other's posts.</h1>
                     <button className="bg-first text-white px-4 py-2 m-2 transition-all 
                     duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth"
