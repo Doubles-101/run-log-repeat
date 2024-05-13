@@ -33,32 +33,32 @@ export const Welcome = ({currentUser}) => {
 
     return (
        <div className="flex flex-col justify-center align-center">
-            <div className="flex bg-first box">
+            <div className="flex bg-first dark:bg-fourth box">
                 <div className="text-white text-6xl text-sans font-bold mx-auto my-auto">Welcome!! {userInfo[0]?.username}</div>
-                <button className="text-white text-5xl text-sans font-bold mx-auto my-auto bg-fourth text-white px-4 py-2 m-2 transition-all 
-                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-second"
+                <button className="text-white text-5xl text-sans font-bold mx-auto my-auto bg-fourth dark:bg-first text-white px-4 py-2 m-2 transition-all 
+                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-second dark:hover:bg-second"
                     onClick={addRunClick}
                 >Add Run</button>
             </div>
-            <div className="flex bg-white box">
-                <div className="text-first text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Create
+            <div className="flex bg-white dark:bg-first box">
+                <div className="text-first dark:text-white text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Create
                     <h1>Post your running journy or see other's posts.</h1>
-                    <button className="bg-first text-white px-4 py-2 m-2 transition-all 
-                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth"
+                    <button className="bg-first dark:bg-fourth text-white px-4 py-2 m-2 transition-all 
+                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth dark:hover:bg-second"
                     onClick={allRunsClick}    
-                >All Runs</button>
+                >All Posts</button>
                 </div>
-                <div className="text-first text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Badges
+                <div className="text-first dark:text-white text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Badges
                     <h1>The more you run, the more badges you earn.</h1>
-                    <button className="bg-first text-white px-4 py-2 m-2 transition-all 
-                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth"
+                    <button className="bg-first dark:bg-fourth text-white px-4 py-2 m-2 transition-all 
+                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth dark:hover:bg-second"
                     onClick={myBadgesClick}    
                 >My Badges</button>
                 </div>
-                <div className="text-first text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Social
+                <div className="text-first dark:text-white text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Social
                     <h1>Edit your profile and see what others have.</h1>
-                    <button className="bg-first text-white px-4 py-2 m-2 transition-all 
-                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth"
+                    <button className="bg-first dark:bg-fourth text-white px-4 py-2 m-2 transition-all 
+                    duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth dark:hover:bg-second"
                     onClick={socialClick}    
                 >My Profile</button>
                 </div>

@@ -29,7 +29,7 @@ export const Login = () => {
   }
 
   return (
-    <main className="flex flex-col w-100 h-screen mx-auto">
+    <main className="flex flex-col w-100 h-screen mx-auto dark:bg-fourth">
       <section className="w-1/2 mx-auto my-auto p-4">
         <form className="flex flex-col w-1/2 mx-auto my-auto bg-third p-4" onSubmit={handleLogin}>
           <h1 className="text-first text-center text-6xl text-sans font-bold mx-auto my-auto">Run Log Repeat</h1>

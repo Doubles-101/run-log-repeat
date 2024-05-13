@@ -13,7 +13,7 @@ export const MyRuns = ({currentUser}) => {
     }, [currentUser])
 
     return (
-        <div className="flex flex-col items-center justify-center h-full">
+        <div className="flex flex-col dark:bg-fourth items-center justify-center h-full">
             <div className="text-first text-center p-8">
                 <h1 className="text-6xl font-bold font-sans w-screen">My Runs</h1>
             </div>

@@ -21,7 +21,6 @@ export const MyBadges = ({currentUser}) => {
     const handleClaimBadges = () => {
         /* Iterates to find distance traveled */
         let totalDistance = 0
-        debugger
         for (const run of userRunInfo[0].runs) {
             const distanceInt = parseInt(run.distance)
             totalDistance += distanceInt
@@ -59,15 +58,15 @@ export const MyBadges = ({currentUser}) => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="flex flex-col items-center justify-center h-screen dark:bg-fourth">
             <div className="color text-first p-8 flex items-center justify-center">
                 <h1 className="text-6xl font-bold font-sans text-center">My Badges</h1>
                 <button 
-                    className="px-4 py-2 m-4 bg-first text-white rounded hover:bg-fourth"
+                    className="px-4 py-2 m-4 bg-first text-white rounded hover:bg-fourth dark:hover:bg-second"
                     onClick={handleClaimBadges}
                 >Claim Badges</button>
             </div>
-            <div className="max-w-4xl w-full bg-third p-6 rounded-lg shadow-lg flex">
+            <div className="max-w-4xl w-full bg-third dark:bg-first dark:text-fourth p-6 rounded-lg shadow-lg flex">
                 <ul>
                     {currentBadges.map((badge) => {
                         return (

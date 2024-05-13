@@ -38,8 +38,8 @@ export const Profile = ({currentUser}) => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-          <div className="max-w-4xl w-full bg-third p-6 rounded-lg shadow-lg flex">
+        <div className="flex flex-col items-center justify-center h-screen dark:bg-fourth">
+          <div className="max-w-4xl w-full bg-third dark:bg-first p-6 rounded-lg shadow-lg flex">
             <div className="w-1/3">
               <img
                 src={userProfile.profileImg}
@@ -60,7 +60,7 @@ export const Profile = ({currentUser}) => {
                 <Link to={`/editprofile`} className="mt-4">
                   <button
                     onClick={handleEdit}
-                    className="px-4 py-2 bg-first text-white rounded hover:bg-fourth"
+                    className="px-4 py-2 bg-first dark:bg-fourth text-white rounded hover:bg-fourth dark:hover:bg-second"
                   >
                     Edit
                   </button>
