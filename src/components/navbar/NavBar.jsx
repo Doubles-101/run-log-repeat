@@ -71,7 +71,7 @@ export const NavBar = ({currentUser}) => {
                             <ul>
                                 <li className="navbar-li text-black text-left p-2 hover:underline">
                                     <Link className="navbar-link" to="/home">
-                                        All Runs
+                                        All Posts
                                     </Link>
                                 </li>
                                 <li className="navbar-li text-black text-left p-2 hover:underline">

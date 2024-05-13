@@ -46,7 +46,7 @@ export const Welcome = ({currentUser}) => {
                     <button className="bg-first dark:bg-fourth text-white px-4 py-2 m-2 transition-all 
                     duration-300 hover:bg-blue-600 hover:shadow-lg hover:bg-fourth dark:hover:bg-second"
                     onClick={allRunsClick}    
-                >All Runs</button>
+                >All Posts</button>
                 </div>
                 <div className="text-first dark:text-white text-4xl w-1/3 text-sans font-bold flex flex-col text-center mt-20 p-10">Badges
                     <h1>The more you run, the more badges you earn.</h1>
